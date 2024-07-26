@@ -3,7 +3,7 @@ on: push
 jobs:
   ascii-job:
     name: this ascii first job
-    runs-on: ubunut-latest
+    runs-on: ubuntu-24.04
     steps:
     - name: checkout the repo
       uses: actions/checkout@v4
