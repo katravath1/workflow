@@ -12,9 +12,8 @@ jobs:
       uses: actions/checkout@v4
     - name: install ascii library
       run: |
-        sudo apt update
-        sudo apt-get install cowsay
-        cowsay
+        chmod +x ascii-code.sh
+        ./ascii-code.sh
        
      
         
