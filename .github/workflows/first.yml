@@ -13,7 +13,7 @@ jobs:
         sudo apt-get install cowsay
         cowsay
         cowsay -e @@ Hello
-        cowsay -f beefymiracle Hello Fedora
+     
         
       
     
