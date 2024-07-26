@@ -1,0 +1,20 @@
+name: ASCII name generator
+on: push
+jobs:
+  ascii-job:
+    name: this ascii first job
+    runs-on: ubunut-latest
+    steps:
+    - name: checkout the repo
+      uses: actions/checkout@v4
+    - name: install ascii library
+      run: |
+        sudo apt update
+        sudo apt-get install cowsay
+        cowsay
+        cowsay -e @@ Hello
+        cowsay -f beefymiracle Hello Fedora
+        
+      
+    
+  
