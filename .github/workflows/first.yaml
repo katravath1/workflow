@@ -1,5 +1,8 @@
 name: ASCII name generator
-on: push
+on: 
+  push:
+    paths:
+    - '.github/workflows/first.yaml'
 jobs:
   ascii-job:
     name: this ascii first job
