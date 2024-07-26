@@ -17,6 +17,8 @@ jobs:
         ./ascii-code.sh
     - name: sample text file
       run: echo "this is sample text file" > sample.txt
+    - name: sleep the hib for 30 sec
+      run: sleep 30
   result-job:
     name: output of the above ascii
     runs-on: ubuntu-latest
