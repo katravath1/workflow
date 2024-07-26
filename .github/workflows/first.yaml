@@ -10,7 +10,7 @@ jobs:
     steps:
     - name: checkout the repo
       uses: actions/checkout@v4
-    - name: install ascii library
+    - name: install ascii with shellscript
       run: |
         chmod +x ./ascii-code.sh
         ./ascii-code.sh
