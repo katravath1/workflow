@@ -15,6 +15,35 @@ jobs:
 
       - name: Setup Python
         uses: actions/setup-python@v4
+  build:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Checkout Code
+          uses: actions/checkout@v3
+  
+        - name: Install Dependencies
+          run: sudo apt-get update
+  
+        - name: Install ca-certificates and curl
+          run: sudo apt-get install -y ca-certificates curl
+  
+        - name: Add Google Cloud Public Signing Key
+          run: |
+            sudo mkdir -p /etc/apt/keyrings
+            curl -fsSL https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo tee /etc/apt/keyrings/kubernetes-archive-keyring.gpg > /dev/null
+  
+        - name: Add Kubernetes APT Repository
+          run: |
+            echo "deb [signed-by=/etc/apt/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+  
+        - name: Update Package List
+          run: sudo apt-get update
+  
+        - name: Install kubectl
+          run: sudo apt-get install -y kubectl
+  
+        - name: Verify kubectl Installation
+          run: kubectl version --client
 
 
 
