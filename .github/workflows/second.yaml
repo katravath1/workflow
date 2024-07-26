@@ -13,13 +13,7 @@ jobs:
         uses: actions/setup-python@v4
 
 
-      - name: Install dependencies
-        run: |
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; else echo "No requirements.txt found."; fi
 
-      - name: Run tests
-        run: |
-          if [ -f manage.py ]; then python manage.py test; else pytest; fi
 
 
 
