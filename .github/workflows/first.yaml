@@ -20,6 +20,7 @@ jobs:
     - name: sleep the hib for 30 sec
       run: sleep 30
   result-job:
+    needs: ascii-job
     name: output of the above ascii
     runs-on: ubuntu-latest
     steps:
